@@ -6,6 +6,11 @@ pipeline {
                 git url: 'https://github.com/CyrusGManoj/project_demo.git', branch: 'main' 
             }
         }
+        stage('Check Docker Path') {
+            steps {
+                sh 'echo $PATH'
+            }
+        }
         stage('Build Docker Image') {
             steps {
                 script {
